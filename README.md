@@ -1,9 +1,11 @@
 ## K8S自建LoadBalancer
 
 ```
-一般只有云平台支持LoadBalancer，如果脱离云平台，自己搭建的K8S集群，Service的类型使用LoadBalancer是没有任何效果的。为了让私有网络中的K8S集群也能体验到LoadBalabcer，Metallb成为了解决方案。
+一般只有云平台支持LoadBalancer，如果脱离云平台，自己搭建的K8S集群，Service的类型使用LoadBalancer是没有任何效果的。
+为了让私有网络中的K8S集群也能体验到LoadBalabcer，Metallb成为了解决方案。
 
-Metallb运行在K8S集群中，监视集群内LoadBalancer类型的服务，然后从配置的IP池中为其分配一个可用IP，以ARP/NDP或BGP的方式将其广播出去，这个可用IP成为了LoadBalancer的Url，可供集群外访问。
+Metallb运行在K8S集群中，监视集群内LoadBalancer类型的服务，然后从配置的IP池中为其分配一个可用IP，
+以ARP/NDP或BGP的方式将其广播出去，这个可用IP成为了LoadBalancer的Url，可供集群外访问。
 ```
 
 ## Metallb搭建过程
