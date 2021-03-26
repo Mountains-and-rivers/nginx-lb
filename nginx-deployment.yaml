@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  namespace: metallb-system
+  labels:
+    app: nginx
+spec:
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: nginx
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: nginx
+        k8s-app: lb
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:test
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 9876
