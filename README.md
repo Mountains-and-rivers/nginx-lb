@@ -70,6 +70,7 @@ kubectl apply -f metallb-configMap.yaml
 ```
 
 ## LoadBalancer测试
+nginx镜像见: https://github.com/Mountains-and-rivers/nginx_static_test/tree/main/centos-images
 
 ```
 kubectl apply -f nginx-deployment.yaml
@@ -92,4 +93,4 @@ speaker-xb6nh               1/1     Running   0          13m
 ```
 
 访问验证
-
+![image](https://github.com/Mountains-and-rivers/nginx-lb/blob/main/image/test.png)
